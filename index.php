@@ -100,8 +100,20 @@
                 <a href="#" class="centrado btn">comprar</a>
 
             </div>
-
             <?php } ?>
+
+            <div id="paginacion">
+
+               <span id="flechaIzquierda">
+                <i class="fa fa-chevron-circle-left fa-5x"></i>
+               </span>
+
+
+                <span id="flechaDerecha">
+                    <i class="fa fa-chevron-circle-right fa-5x"></i>
+                </span>
+
+            </div>
         </div>
         <footer>
 
