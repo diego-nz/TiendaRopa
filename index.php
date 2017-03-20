@@ -10,6 +10,7 @@
     <script type="text/javascript" src="controlador/eventosInicio.js"></script>
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
+    <link rel="stylesheet" href="assets/css/estilosMovil.css">
     <title>Gifts</title>
 </head>
 
@@ -17,8 +18,17 @@
     <header>
         <?php require_once("vista/estaticas/header.html"); ?>
     </header>
-    <section>
 
+    <nav>
+        <ul>
+            <li><a href="#">Hogar</a></li>
+            <li><a href="#">Joyeria y relojes</a></li>
+            <li><a href="#">Aniversarios</a></li>
+            <li><a href="#">Más vendidos</a></li>
+            <li><a href="#">Cumpleaños</a></li>
+        </ul>
+    </nav>
+    <section>
         <!----Aqui va el slider--->
            <ul class="bxslider">
              <li><img src="assets/slider/welcome.png" /></li>
@@ -129,8 +139,5 @@
         </footer>
     </section>
 
-
-
 </body>
-
 </html>
