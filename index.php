@@ -48,7 +48,7 @@
                 $prodAleatorio5=rand(1,55);
             ?>
             <div class="imagenProducto">
-                <a href="productos.php?pro="><img src="imagenes/productos/<?php echo $prodAleatorio; ?>.png" alt="" /></a>
+                <a href="productos.php?pro="><img src="productos/<?php echo $prodAleatorio; ?>.png" alt="" /></a>
                 <div class="precioProducto">
                     $200.00
                 </div>
@@ -60,7 +60,7 @@
 
             </div>
             <div class="imagenProducto">
-                <a href="productos.php?pro="><img src="imagenes/productos/<?php echo $prodAleatorio2; ?>.png" alt="" /></a>
+                <a href="productos.php?pro="><img src="productos/<?php echo $prodAleatorio2; ?>.png" alt="" /></a>
                 <div class="precioProducto">
                     $200
                 </div>
@@ -72,7 +72,7 @@
 
             </div>
             <div class="imagenProducto">
-                <a href="productos.php?pro="><img src="imagenes/productos/<?php echo $prodAleatorio3; ?>.png" alt="" /></a>
+                <a href="productos.php?pro="><img src="productos/<?php echo $prodAleatorio3; ?>.png" alt="" /></a>
                 <div class="precioProducto">
                     $200.00
                 </div>
@@ -84,7 +84,7 @@
 
             </div>
             <div class="imagenProducto">
-                <a href="productos.php?pro="><img src="imagenes/productos/<?php echo $prodAleatorio4; ?>.png" alt="" /></a>
+                <a href="productos.php?pro="><img src="productos/<?php echo $prodAleatorio4; ?>.png" alt="" /></a>
                 <div class="precioProducto">
                     $200.00
                 </div>
@@ -96,7 +96,7 @@
 
             </div>
             <div class="imagenProducto">
-                <a href="productos.php?pro="><img src="imagenes/productos/<?php echo $prodAleatorio5; ?>.png" alt="" /></a>
+                <a href="productos.php?pro="><img src="productos/<?php echo $prodAleatorio5; ?>.png" alt="" /></a>
                 <div class="precioProducto">
                     $200.00
                 </div>
