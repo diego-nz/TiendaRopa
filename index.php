@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/jscript" src="assets/js/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="assets/css/jquery.bxslider.min.css">
+    <script type="text/javascript" src="controlador/eventosInicio.js"></script>
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
     <title>Gifts</title>
@@ -11,14 +15,17 @@
 
 <body>
     <header>
-        <?php require_once("view/estaticas/header.html"); ?>
+        <?php require_once("vista/estaticas/header.html"); ?>
     </header>
     <section>
 
         <!----Aqui va el slider--->
-        <div class="slider">
-
-        </div>
+           <ul class="bxslider">
+              <li><img src="assets/slider/1.jpg" /></li>
+              <li><img src="assets/slider/2.jpg" /></li>
+              <li><img src="assets/slider/3.jpg" /></li>
+              <li><img src="assets/slider/4.jpg" /></li>
+            </ul>
 
 
         <div class="categorias">
@@ -117,7 +124,7 @@
         </div>
         <footer>
 
-            <?php require_once("view/estaticas/footer.html"); ?>
+            <?php require_once("vista/estaticas/footer.html"); ?>
         </footer>
     </section>
 
