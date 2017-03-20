@@ -21,6 +21,7 @@
 
         <!----Aqui va el slider--->
            <ul class="bxslider">
+             <li><img src="assets/slider/welcome.png" /></li>
               <li><img src="assets/slider/1.jpg" /></li>
               <li><img src="assets/slider/2.jpg" /></li>
               <li><img src="assets/slider/3.jpg" /></li>
