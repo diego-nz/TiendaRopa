@@ -1,0 +1,56 @@
+body{
+	font: san-serif;
+	background: linear-gradient(Odeg,#C0C0C0, #F8F8F8);
+}
+
+table{
+	border-collapse: collapse;
+	width: 70%;
+	align-content: center;
+
+}
+th,td{
+	padding: 0.25;
+	border: 1px solid #ccc;
+}
+
+ul li a{
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+}
+
+ul {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.menu{
+	text-align: center;
+    font-family:sans-serif;
+    font-size: 15px;
+    background: pink;
+    padding: 10px 90px;
+}
+.menu ul{
+    margin: 0;
+    list-style: none;
+    padding: 0px;
+    display: flex;
+}
+
+.menu li:hover{
+    background-color: #DEDDDD;
+    text-shadow: 0 0 2px #000;
+    border-radius: 5px;
+}
+.menu li{
+    display: inline-block;
+}
+.menu li a{
+    width: 90px;
+    text-decoration: none;
+    color:  #FFF;
+    padding: 30px 20px;
+}
+

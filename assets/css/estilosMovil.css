@@ -1,0 +1,13 @@
+/*tablets*/
+@media only screen and (max-width: 980px) {
+    body{
+        background-color: black;
+    }
+}
+
+/*celulares*/
+@media only screen and (max-width: 680px) {
+    body{
+        background-color: aliceblue;
+    }
+}
