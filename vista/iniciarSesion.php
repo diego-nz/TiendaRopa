@@ -7,7 +7,7 @@
 
         require_once("modelo/conexion.php");
 
-        $mysqli->real_query("SELECT usuario,pass,nivel FROM t_usuarios WHERE "
+        $mysqli->real_query("SELECT id_usuario,usuario,pass,nivel FROM t_usuarios WHERE "
                             ."usuario='".$usuario."' AND pass='".$contrasenaDesencriptada."' ");
 
         $query=$mysqli->store_result();
@@ -18,6 +18,7 @@
                 $passQuery=$row["pass"];
                     if($usuarioQuery == $usuario){
                         if($passQuery == $contrasenaDesencriptada){
+                            $_SESSION["idUsuario"]=$row["id_usuario"];
                             $_SESSION['nombreUsuario'] = $row["usuario"];
                             $_SESSION['nivelUsuario'] = $row["nivel"];
                             header("Location: ?vista=inicio");
