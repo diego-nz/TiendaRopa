@@ -16,11 +16,11 @@ session_start();
     <?php
     if(isset($_SESSION["nivelUsuario"])){
         $nivel=$_SESSION["nivelUsuario"];
-        if($nivel == "administrador"){
+        if($nivel == "Administrador"){
             require_once( "estaticas/menuAdministrador.html");
-        }else if($nivel == "secretaria"){
+        }else if($nivel == "Secretaria"){
             require_once( "estaticas/menuSecretaria.html");
-        }else if($nivel == "cliente"){
+        }else if($nivel == "Cliente"){
             require_once( "estaticas/menuCliente.html");
         }
     }else{
