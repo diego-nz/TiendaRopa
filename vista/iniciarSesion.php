@@ -1,8 +1,6 @@
 <?php
     if(isset($_POST["txtUsuario"]) || isset($_POST["txtContrasena"])){
-        if (!isset($_SESSION)) {
-            session_start();
-        }
+        session_start();
         $usuario=$_POST["txtUsuario"];
         $contrasena=$_POST["txtContrasena"];
         $contrasenaDesencriptada = hash("sha512",$contrasena);
@@ -49,7 +47,7 @@
 </head>
 
 <body>
-    <?php require_once( "vista/estaticas/header.html"); ?>
+    <?php require_once( "vista/estaticas/header.php"); ?>
 
     <section>
         <div class="login">

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/estilosMovil.css">
 	</head>
 	<header>
-	    <?php require_once("vista/estaticas/header.html"); ?>
+	    <?php require_once("vista/estaticas/header.php"); ?>
 	</header>
 	<body>
     <?php require_once("vista/menuSesion.php");?>

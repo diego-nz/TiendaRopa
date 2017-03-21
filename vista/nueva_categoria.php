@@ -23,7 +23,7 @@ header("Location:?vista=categoria");
 </head>
 <body>
     <header>
-      <?php require_once("vista/estaticas/header.html"); ?>
+      <?php require_once("vista/estaticas/header.php"); ?>
   </header>
    <?php require_once("vista/menuSesion.php"); ?>
 	<center>

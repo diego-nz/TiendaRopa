@@ -1,9 +1,8 @@
 <?php
-    if(isset($_SESSION)){
-        session_start();
-        echo $_SESSION["nombreUsuario"];
-        echo $_SESSION["nivelUsuario"];
-    }
+session_start();
+if(isset($_SESSION["nombreUsuario"])){
+   echo "Bienvenido ".$_SESSION["nombreUsuario"]." ".$_SESSION["nivelUsuario"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +22,7 @@
 
 <body>
     <header>
-        <?php require_once("estaticas/header.html"); ?>
+        <?php require_once("estaticas/header.php"); ?>
     </header>
 
     <nav>

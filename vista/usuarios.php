@@ -17,7 +17,7 @@ $resultado=$mysqli ->query($query);
 
 <body>
   <header>
-      <?php require_once("vista/estaticas/header.html"); ?>
+      <?php require_once("vista/estaticas/header.php"); ?>
   </header>
    <?php require_once("vista/menuSesion.php"); ?>
     <center>
