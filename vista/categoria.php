@@ -1,27 +1,30 @@
 <?php
-	require_once("../modelo/conexion.php");
+	require_once("modelo/conexion.php");
 	$query="SELECT id_categoria,categoria FROM t_categorias";
 	$resultado=$mysqli ->query($query);
 ?>
 
 <html>
 	<head>
-	 <?php include './menu.php'; ?>
-		<title>Categorias</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
 
+		<title>Categorias</title>
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
+    <link rel="stylesheet" href="assets/css/estilosMovil.css">
+	</head>
+	<header>
+	    <?php require_once("vista/estaticas/header.html"); ?>
+	</header>
+	<body>
+    <?php require_once("vista/menuSesion.php");?>
 	<center>
 
-	<a href="nueva_categoria.php">
-	<img src="../assets/agregar.png" >
+	<a href="?vista=nueva_categoria">
+	<img src="assets/agregar.png" >
 	</a>
 	 </center>
 
 		<center><h1>Agregar una nueva categoria</h1></center>
-
-
 
 	<center>
 		<table>
@@ -47,15 +50,18 @@
 						<td><?php echo $row['categoria'];?></td>
 
 						<td>
-							<a href="modificar_Categoria.php?id=<?php echo $row["id_categoria"];?>"><img src="edit.png"></a>
+							<a href="?vista=modificar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/edit.png"></a>
 						</td>
 						<td>
-							<a href="eliminar_Categoria.php?id=<?php echo $row["id_categoria"];?>"><img src="eliminar.png"></a>
+							<a href="?vista=eliminar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/eliminar.png"></a>
 						</td>
 					</tr>
 					<?php } ?>
 				</tbody>
 		</table>
 		</center>
+		<footer>
+        <?php require_once("vista/estaticas/footer.html"); ?>
+    </footer>
    </body>
 </html>

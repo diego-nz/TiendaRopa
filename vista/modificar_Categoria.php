@@ -1,5 +1,5 @@
 <?php
-	require_once("../modelo/conexion.php");
+	require_once("modelo/conexion.php");
 $id=$_GET['id'];
 
 $query="SELECT categoria FROM t_categorias WHERE id_categoria ='$id'";
@@ -15,18 +15,27 @@ if(isset($_POST["txtCategoria"])){
 $query="UPDATE t_categorias SET categoria='$categoria' WHERE id_categoria='$id'";
 
 $resultado=$mysqli->query($query);
-
-    header("Location:categoria.php");
-
-
+    header("Location:?vista=categoria");
 }
 
 ?>
-<html>
-	<head>
-		<title>Categorias</title>
-	</head>
-	<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
+    <link rel="stylesheet" href="assets/css/estilosMovil.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <title>Categorias</title>
+</head>
+<body>
+    <header>
+      <?php require_once("vista/estaticas/header.html"); ?>
+  </header>
+   <?php require_once("vista/menuSesion.php"); ?>
+
 		<center><h1>Modificar Categoria</h1></center>
 		<form name="cambios_Categoria" method="POST" action="#">
 		<br>
@@ -44,5 +53,9 @@ $resultado=$mysqli->query($query);
 			</table>
 			</center>
 		</form>
-	</body>
+	<footer>
+	    <?php require_once("vista/estaticas/footer.html"); ?>
+	</footer>
+</body>
 </html>
+

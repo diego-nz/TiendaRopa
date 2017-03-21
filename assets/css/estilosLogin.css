@@ -1,0 +1,36 @@
+.login{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px;
+    width: 30%;
+    padding: 50px;
+    text-align: center;
+}
+.cajas{
+    display: block;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 5px;
+    border: solid 2px;
+}
+.login label{
+    display: block;
+    margin: 10px;
+    font-size: 1.2em;
+}
+.cajas:focus{
+    color: #2E3133;
+    border: solid 5px #969696;
+}
+.boton{
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1em;
+}
+.boton:hover{
+    background-color: #ddd;
+
+}
