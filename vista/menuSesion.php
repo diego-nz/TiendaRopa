@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,18 @@
 
 <body>
     <?php
-    require_once( "estaticas/menuAdministrador.html");
-    require_once( "estaticas/menuCliente.html");
-    require_once( "estaticas/menuSecretaria.html");
+    if(isset($_SESSION["nivelUsuario"])){
+        $nivel=$_SESSION["nivelUsuario"];
+        if($nivel == "administrador"){
+            require_once( "estaticas/menuAdministrador.html");
+        }else if($nivel == "secretaria"){
+            require_once( "estaticas/menuSecretaria.html");
+        }else if($nivel == "cliente"){
+            require_once( "estaticas/menuCliente.html");
+        }
+    }else{
+        echo "<h1>Inicia sesión por favor</h1>";
+    }
     ?>
 </body>
 

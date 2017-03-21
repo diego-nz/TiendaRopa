@@ -1,37 +1,38 @@
 <?php
     if(isset($_POST["txtUsuario"]) || isset($_POST["txtContrasena"])){
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $usuario=$_POST["txtUsuario"];
+        $contrasena=$_POST["txtContrasena"];
+        $contrasenaDesencriptada = hash("sha512",$contrasena);
 
-            require_once ("modelo/conexion.php");
-                $usuario=$_POST["txtUsuario"];
-                $contrasena=$_POST["txtContrasena"];
-                $contrasena = hash("sha512",$contrasena);
+        require_once("modelo/conexion.php");
 
-                $mysqli->real_query("SELECT usuarios.usuario,usuarios.pass,usuarios.nivel from usuarios WHERE " ."usuarios.usuario='".$usuario."' AND pass='".$contrasena."' ");
-                $query=$mysqli->store_result();
-                echo '<script type = text/javascript>
-                                alert($query);
+        $mysqli->real_query("SELECT usuario,pass,nivel FROM t_usuarios WHERE "
+                            ."usuario='".$usuario."' AND pass='".$contrasenaDesencriptada."' ");
 
-                                </script>';
-                if($query){
-                    while($row = $query->fetch_assoc()){
-                            if($row["usuario"] == $usuario){
-                                session_start();
-                                $_SESSION['nombreUsuario'] = $row["usuario"];
-                                $_SESSION['nivelUsuario'] = $row["nivel"];
-                                header("Location: inicio.php");
-                                echo '<script type = text/javascript>
-                                alert("Usuario");
+        $query=$mysqli->store_result();
 
-                                </script>';
-                            }else{
-                                echo '<script language = javascript>
-                                alert("Usuario o Password incorrectos, por favor verifique.")
-                                self.location = "iniciarSesion.php"
-                                </script>';
-                            }
+        if($query){
+            while($row = $query->fetch_assoc()){
+                $usuarioQuery=$row["usuario"];
+                $passQuery=$row["pass"];
+                    if($usuarioQuery == $usuario){
+                        if($passQuery == $contrasenaDesencriptada){
+                            $_SESSION['nombreUsuario'] = $row["usuario"];
+                            $_SESSION['nivelUsuario'] = $row["nivel"];
+                            header("Location: ?vista=inicio");
+                            echo "bien";
+                        }else{
+                            echo "credenciales incorrectos";
                         }
                     }
-                }
+            }
+            echo "no hay";
+        }
+        echo "muy mal";
+    }
 
 ?>
 <!DOCTYPE html>

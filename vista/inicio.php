@@ -1,3 +1,10 @@
+<?php
+    if(isset($_SESSION)){
+        session_start();
+        echo $_SESSION["nombreUsuario"];
+        echo $_SESSION["nivelUsuario"];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
