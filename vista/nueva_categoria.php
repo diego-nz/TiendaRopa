@@ -25,7 +25,6 @@ header("Location:?vista=categoria");
     <header>
       <?php require_once("vista/estaticas/header.php"); ?>
   </header>
-   <?php require_once("vista/menuSesion.php"); ?>
 	<center>
 		<h1>Nueva Categoria</h1>
 		<form name="nueva_categoria" method="POST" action="#">

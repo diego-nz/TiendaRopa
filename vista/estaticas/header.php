@@ -2,10 +2,10 @@
     <ul>
         <!----Sustituir los # con el nombre de la pagina a donde va ser dirigido--->
         <li><a href="?vista=inicio"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
-        <li><a href="?vista=menuSesion"><i class="fa fa-user fa-fw"></i>Mi cuenta</a></li>
+        <li><a href="#"><i class="fa fa-user fa-fw"></i>Mi cuenta</a></li>
         <li><a href="#"><i class="fa fa-heart fa-fw"></i>Favoritos</a></li>
         <?php
-        if(isset($_SESSION["nombreUsuario"])){ ?>
+        if(isset($_SESSION["nombreUsuario"])){?>
         <li><a href="?vista=cerrarSesion"><i class="fa fa-lock fa-fw"></i>Cerrar sesión</a></li>
         <?php }else{ ?>
         <li><a href="?vista=iniciarSesion"><i class="fa fa-lock fa-fw"></i>Inicio sesión</a></li>
@@ -28,3 +28,15 @@
         </ul>
     </div>
 </div>
+ <?php
+    if(isset($_SESSION["nivelUsuario"])){
+        $nivel=$_SESSION["nivelUsuario"];
+        if($nivel == "Administrador"){
+            require_once( "menuAdministrador.html");
+        }else if($nivel == "Secretaria"){
+            require_once( "menuSecretaria.html");
+        }else if($nivel == "Cliente"){
+            require_once( "menuCliente.html");
+        }
+    }
+    ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 	require_once("modelo/conexion.php");
 	$query="SELECT id_categoria,categoria FROM t_categorias";
 	$resultado=$mysqli ->query($query);
@@ -16,7 +17,6 @@
 	    <?php require_once("vista/estaticas/header.php"); ?>
 	</header>
 	<body>
-    <?php require_once("vista/menuSesion.php");?>
 	<center>
 
 	<a href="?vista=nueva_categoria">

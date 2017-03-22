@@ -37,11 +37,11 @@ if(isset($_SESSION["nombreUsuario"])){
     <section>
         <!----Aqui va el slider--->
            <ul class="bxslider">
-             <li><img src="assets/slider/welcome.png" /></li>
-              <li><img src="assets/slider/1.jpg" /></li>
-              <li><img src="assets/slider/2.jpg" /></li>
-              <li><img src="assets/slider/3.jpg" /></li>
-              <li><img src="assets/slider/4.jpg" /></li>
+             <li><img src="imagenesSlider/welcome.png" /></li>
+              <li><img src="imagenesSlider/1.jpg" /></li>
+              <li><img src="imagenesSlider/2.jpg" /></li>
+              <li><img src="imagenesSlider/3.jpg" /></li>
+              <li><img src="imagenesSlider/4.jpg" /></li>
             </ul>
 
 
@@ -57,74 +57,33 @@ if(isset($_SESSION["nombreUsuario"])){
         </div>
 
         <div class="productos">
-            <?php for ($i=1 ; $i <=2 ; $i++) {
-                $prodAleatorio=rand(1,55);
-                $prodAleatorio2=rand(1,55);
-                $prodAleatorio3=rand(1,55);
-                $prodAleatorio4=rand(1,55);
-                $prodAleatorio5=rand(1,55);
+
+            <?php
+            require_once("modelo/conexion.php");
+            for ($i=1 ; $i <=2 ; $i++) {
+                $mysqli->real_query("SELECT producto,precio_venta,imagen from t_productos ORDER BY rand() limit 5");
+                $query=$mysqli->store_result();
+                if($query){
+                    while($row = $query->fetch_assoc()){
+
             ?>
             <div class="imagenProducto">
-                <a href="?vista=producto&pro="><img src="productos/<?php echo $prodAleatorio; ?>.png" alt="" /></a>
+                <a href="?vista=producto&pro="><img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
                 <div class="precioProducto">
-                    $200.00
+                    <?php echo $row["precio_venta"]; ?>
                 </div>
                 <div class="nombreProducto">
-                    Nombre
+                    <?php echo $row["producto"]; ?>
                 </div>
 
                 <a href="#" class="centrado btn">comprar</a>
-
             </div>
-            <div class="imagenProducto">
-                <a href="?vista=producto&pro="><img src="productos/<?php echo $prodAleatorio2; ?>.png" alt="" /></a>
-                <div class="precioProducto">
-                    $200
-                </div>
-                <div class="nombreProducto">
-                    Nombre
-                </div>
 
-                <a href="#" class="centrado btn">comprar</a>
-
-            </div>
-            <div class="imagenProducto">
-                <a href="?vista=producto&pro="><img src="productos/<?php echo $prodAleatorio3; ?>.png" alt="" /></a>
-                <div class="precioProducto">
-                    $200.00
-                </div>
-                <div class="nombreProducto">
-                    Nombre
-                </div>
-
-                <a href="#" class="centrado btn">comprar</a>
-
-            </div>
-            <div class="imagenProducto">
-                <a href="?vista=producto&pro="><img src="productos/<?php echo $prodAleatorio4; ?>.png" alt="" /></a>
-                <div class="precioProducto">
-                    $200.00
-                </div>
-                <div class="nombreProducto">
-                    Nombre
-                </div>
-
-                <a href="#" class="centrado btn">comprar</a>
-
-            </div>
-            <div class="imagenProducto">
-                <a href="?vista=producto&pro="><img src="productos/<?php echo $prodAleatorio5; ?>.png" alt="" /></a>
-                <div class="precioProducto">
-                    $200.00
-                </div>
-                <div class="nombreProducto">
-                    Nombre
-                </div>
-
-                <a href="#" class="centrado btn">comprar</a>
-
-            </div>
-            <?php } ?>
+            <?php
+                            }
+                        }
+                    }
+            ?>
 
             <div id="paginacion">
 
@@ -132,6 +91,7 @@ if(isset($_SESSION["nombreUsuario"])){
                 <i class="fa fa-chevron-circle-left fa-5x"></i>
                </span>
 
+                <!---AJAX consulta-->
 
                 <span id="flechaDerecha">
                     <i class="fa fa-chevron-circle-right fa-5x"></i>

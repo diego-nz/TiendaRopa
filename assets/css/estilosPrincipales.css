@@ -62,6 +62,7 @@ th,td{
     display:inline-block;
     float: right;
     vertical-align: middle;
+    text-align: center;
 }
 .carrito ul li{
     vertical-align: text-top;

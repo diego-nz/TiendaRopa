@@ -22,15 +22,13 @@
                             $_SESSION['nombreUsuario'] = $row["usuario"];
                             $_SESSION['nivelUsuario'] = $row["nivel"];
                             header("Location: ?vista=inicio");
-                            echo "bien";
                         }else{
                             echo "credenciales incorrectos";
                         }
                     }
             }
-            echo "no hay";
+            echo "No hay usuarios registrados";
         }
-        echo "muy mal";
     }
 
 ?>

@@ -1,13 +1,80 @@
 /*tablets*/
 @media only screen and (max-width: 980px) {
     body{
-        background-color: black;
+        --background-color: black;
+    }
+    .menu ul{
+    font-weight: 100;
+    text-transform: uppercase;
+    }
+    .menu ul li{
+        margin-left: 1px;
+        list-style: none;
+        display: inline-block;
+    }
+    .menu ul li a{
+        margin-left: 1px;
+        color: #def8fb;
+    }
+
+    .capaLogo{
+        width: 100%;
+    }
+    .logo{
+        width: 20%;
+    }
+    .buscador{
+        width: 30%;
+        margin-left: 100px;
+    }
+    .carrito{
+        width: 25%;
+        vertical-align: top;
+        text-align: center;
+        border: solid 1px white;
     }
 }
 
 /*celulares*/
 @media only screen and (max-width: 680px) {
     body{
-        background-color: aliceblue;
+        --background-color: aliceblue;
+    }
+    .logo{
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buscador{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .carrito{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+   nav{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #def8fb;
+    text-align: center;
+    padding: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    }
+    nav ul{
+        --margin-left: 10px;
+    }
+    nav ul li{
+        margin: 5px;
+        list-style: none;
+        display: inline-block;
+    }
+    nav ul li a{
+        color: #00bed7;
     }
 }

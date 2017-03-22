@@ -34,7 +34,6 @@ $resultado=$mysqli->query($query);
     <header>
       <?php require_once("vista/estaticas/header.php"); ?>
   </header>
-   <?php require_once("vista/menuSesion.php"); ?>
 
 		<center><h1>Modificar Categoria</h1></center>
 		<form name="cambios_Categoria" method="POST" action="#">

@@ -1,4 +1,5 @@
 <?php require_once( "modelo/conexion.php");
+session_start();
 $query="SELECT id_usuario,usuario,pass,nivel FROM t_usuarios" ;
 $resultado=$mysqli ->query($query);
 ?>
@@ -19,7 +20,6 @@ $resultado=$mysqli ->query($query);
   <header>
       <?php require_once("vista/estaticas/header.php"); ?>
   </header>
-   <?php require_once("vista/menuSesion.php"); ?>
     <center>
         <a href="?vista=nuevo_usuario">
             <img src="assets/agregar.png">
@@ -63,10 +63,10 @@ $resultado=$mysqli ->query($query);
                         <?php echo $row[ 'nivel'];?>
                     </td>
                     <td>
-                        <a href="?vista=modificar&id=<?php echo $row[" id_usuario "];?>"><img src="assets/edit.png"></a>
+                        <a href="?vista=modificar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/edit.png"></a>
                     </td>
                     <td>
-                        <a href="?vista=eliminar&id=<?php echo $row[" id_usuario "];?>"><img src="assets/eliminar.png"></a>
+                        <a href="?vista=eliminar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/eliminar.png"></a>
                     </td>
                 </tr>
                 <?php } ?>

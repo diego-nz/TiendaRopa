@@ -3,7 +3,6 @@ $(document).ready(function(){
         auto: true,
         mode: 'fade',
         speed: 500,
-        randomStart:true,
         adaptiveHeight: true,
         adaptiveHeightSpeed: 200,
         responsive: true,
