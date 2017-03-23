@@ -37,7 +37,6 @@ if(isset($_SESSION["nombreUsuario"])){
     <section>
         <!----Aqui va el slider--->
            <ul class="bxslider">
-             <li><img src="imagenesSlider/welcome.png" /></li>
               <li><img src="imagenesSlider/1.jpg" /></li>
               <li><img src="imagenesSlider/2.jpg" /></li>
               <li><img src="imagenesSlider/3.jpg" /></li>
@@ -61,7 +60,7 @@ if(isset($_SESSION["nombreUsuario"])){
             <?php
             require_once("modelo/conexion.php");
             for ($i=1 ; $i <=2 ; $i++) {
-                $mysqli->real_query("SELECT producto,precio_venta,imagen from t_productos ORDER BY rand() limit 5");
+                $mysqli->real_query("SELECT producto,p_venta,imagen from t_productos ORDER BY rand() limit 5");
                 $query=$mysqli->store_result();
                 if($query){
                     while($row = $query->fetch_assoc()){
@@ -70,7 +69,7 @@ if(isset($_SESSION["nombreUsuario"])){
             <div class="imagenProducto">
                 <a href="?vista=producto&pro="><img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
                 <div class="precioProducto">
-                    <?php echo $row["precio_venta"]; ?>
+                    <?php echo '$'.$row["p_venta"]; ?>
                 </div>
                 <div class="nombreProducto">
                     <?php echo $row["producto"]; ?>

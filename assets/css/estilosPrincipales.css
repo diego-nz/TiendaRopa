@@ -122,6 +122,7 @@ section{
     text-transform: uppercase;
 }
 .productos{
+    margin-left: 10px;
     margin-top: 50px;
     display: inline-block;
     width: 79%;
