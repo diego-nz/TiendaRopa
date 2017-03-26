@@ -19,6 +19,13 @@ th,td{
 	padding: 0.25;
 	border: 1px solid #ccc;
 }
+/*#slider{
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}*/
 .menu{
     background-color: #00bed7;
     width: 100%;

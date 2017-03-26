@@ -2,6 +2,7 @@
 require_once("../modelo/conexion.php");
 //agarrar el json que viene por post
 $inicio=$_POST["pagina"];
+
 $mysqli -> real_query("SELECT producto,p_venta,imagen from t_productos limit $inicio, 10 ");
 $query = $mysqli -> store_result() or die(mysqli_error($mysqli));
 

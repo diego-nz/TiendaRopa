@@ -36,12 +36,14 @@ if(isset($_SESSION["nombreUsuario"])){
     </nav>
     <section>
         <!----Aqui va el slider--->
+        <div class="" id="slider">
            <ul class="bxslider">
               <li><img src="imagenesSlider/1.jpg" /></li>
               <li><img src="imagenesSlider/2.jpg" /></li>
               <li><img src="imagenesSlider/3.jpg" /></li>
               <li><img src="imagenesSlider/4.jpg" /></li>
             </ul>
+          </div>
 
 
         <div class="categorias">
@@ -56,7 +58,7 @@ if(isset($_SESSION["nombreUsuario"])){
         </div>
 
         <div class="productos">
-
+            <div id="cargando"></div>
             <?php
             require_once("modelo/conexion.php");
             //for ($i=1 ; $i <=2 ; $i++) {
