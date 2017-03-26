@@ -188,14 +188,31 @@ footer{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin-top: 20px;
+}
+#paginacion a{
+    text-decoration: none;
+    color: #0088fb;
 }
 #flechaIzquierda{
     display: inline-block;
-    width: 50%;
+    width: 30%;
+    text-align: right;
+}
+#paginas{
+    display: inline-block;
+    width: 5%;
+    text-align: center;
+}
+#paginas a{
+    text-decoration: underline;
+    font-size: 1.2em;
+    vertical-align: text-top;
 }
 #flechaDerecha{
     display: inline-block;
-    width: 49%;
+    width: 30%;
+    text-align: left;
 }
 #encabezado{
     font-size: 2em;
@@ -210,14 +227,13 @@ footer{
     padding: 10px 90px;
 }
 .menuGestion ul{
-    margin: 0;
+    margin: 0px;
     list-style: none;
     padding: 0px;
-    display: flex;
 }
 
 .menuGestion li:hover{
-    background-color: #DEDDDD;
+    background-color: #d7f9fc;
     text-shadow: 0 0 2px #000;
     border-radius: 5px;
 }
@@ -229,4 +245,5 @@ footer{
     text-decoration: none;
     color:  #FFF;
     padding: 30px 20px;
+    font-size: 1.2em;
 }

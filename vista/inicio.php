@@ -59,8 +59,8 @@ if(isset($_SESSION["nombreUsuario"])){
 
             <?php
             require_once("modelo/conexion.php");
-            for ($i=1 ; $i <=2 ; $i++) {
-                $mysqli->real_query("SELECT producto,p_venta,imagen from t_productos ORDER BY rand() limit 5");
+            //for ($i=1 ; $i <=2 ; $i++) {
+                $mysqli->real_query("SELECT producto,p_venta,imagen from t_productos limit 0,10");
                 $query=$mysqli->store_result();
                 if($query){
                     while($row = $query->fetch_assoc()){
@@ -81,23 +81,45 @@ if(isset($_SESSION["nombreUsuario"])){
             <?php
                             }
                         }
-                    }
+                   // }
             ?>
+
+        </div>
+        <div id="productosPaginados">
+
+        </div>
 
             <div id="paginacion">
 
                <span id="flechaIzquierda">
-                <i class="fa fa-chevron-circle-left fa-5x"></i>
+                <a href="#"><i class="fa fa-chevron-circle-left fa-5x"></i></a>
                </span>
 
                 <!---AJAX consulta-->
+                <?php
+
+                    $mysqli -> real_query("SELECT count(id_producto)'total' FROM t_productos");
+                    $query=$mysqli->store_result();
+                    if($query){
+                        $row = $query->fetch_assoc();
+                            $total = intval($row['total']/10);
+                            for($i=1;$i<=$total;$i++ ){
+                ?>
+                                <span id="paginas">
+                                    <a href="#" id="<?php echo $i; ?>" class="numeroPagina" onclick="siguientePagina();"><?php echo $i; ?></a>
+                                </span>
+                <?php
+                            }
+                    }
+                ?>
 
                 <span id="flechaDerecha">
-                    <i class="fa fa-chevron-circle-right fa-5x"></i>
+                    <a href="#"><i class="fa fa-chevron-circle-right fa-5x"></i></a>
                 </span>
 
+
+
             </div>
-        </div>
         <footer>
 
             <?php require_once("estaticas/footer.html"); ?>
