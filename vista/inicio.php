@@ -30,7 +30,7 @@ if(isset($_SESSION["nombreUsuario"])){
             <li><a href="#">Hogar</a></li>
             <li><a href="#">Joyeria y relojes</a></li>
             <li><a href="#">Aniversarios</a></li>
-            <li><a href="#">Más vendidos</a></li>
+            <li><a href="#" onclick="cargarProductos();" id="masVendidos">Más vendidos</a></li>
             <li><a href="#">Cumpleaños</a></li>
         </ul>
     </nav>
@@ -62,14 +62,15 @@ if(isset($_SESSION["nombreUsuario"])){
             <?php
             require_once("modelo/conexion.php");
             //for ($i=1 ; $i <=2 ; $i++) {
-                $mysqli->real_query("SELECT producto,p_venta,imagen from t_productos limit 0,10");
+                $mysqli->real_query("SELECT id_producto,producto,p_venta,imagen from t_productos limit 0,10");
                 $query=$mysqli->store_result();
                 if($query){
                     while($row = $query->fetch_assoc()){
 
             ?>
             <div class="imagenProducto">
-                <a href="?vista=producto&pro="><img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
+               <!---vista se refiere al nombre de la pagina(sin .php) & significa otra variable y pro es la variable del id-->
+                <a href="?vista=producto&pro="<?php echo $row['id_producto']; ?>><img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
                 <div class="precioProducto">
                     <?php echo '$'.$row["p_venta"]; ?>
                 </div>
@@ -85,6 +86,10 @@ if(isset($_SESSION["nombreUsuario"])){
                         }
                    // }
             ?>
+            <div id="resultadosBuscador">
+
+            </div>
+            <div id="sinResultados"></div>
 
         </div>
         <div id="productosPaginados">
@@ -108,7 +113,7 @@ if(isset($_SESSION["nombreUsuario"])){
                             for($i=1;$i<=$total;$i++ ){
                 ?>
                                 <span id="paginas">
-                                    <a href="#" id="<?php echo $i; ?>" class="numeroPagina" onclick="siguientePagina();animacionScroll('.productos');"><?php echo $i; ?></a>
+                                    <a href="#" id="<?php echo $i; ?>" class="numeroPagina" onclick="animacionScroll('.productos');"><?php echo $i; ?></a>
                                 </span>
                 <?php
                             }

@@ -10,7 +10,7 @@ $query = $mysqli -> store_result() or die(mysqli_error($mysqli));
         while($row=$query -> fetch_assoc()){
             echo '<div class="imagenProducto">
                 <a href="?vista=producto&pro="><img src="imagenesProductos/'; echo $row["imagen"]; echo ' " alt="" /></a>
-                <div class="precioProducto">';
+                <div class="precioProducto">$';
             echo    $row["p_venta"];
             echo '    </div>
                 <div class="nombreProducto">';

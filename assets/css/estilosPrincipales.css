@@ -225,6 +225,28 @@ footer{
     font-size: 2em;
     text-align: center;
 }
+#buscadorProductos{
+    width: 100%;
+    display: inline-block;
+}
+#imagenBuscador{
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+#productoBuscador{
+    width: 35%;
+    display: inline-block;
+}
+#precioBuscador{
+    width: 35%;
+    display: inline-block;
+}
+#botonCompra{
+    width: 20%;
+    display: inline-block;
+}
+
 /*Estilos de gestion tablas etc*/
 .menuGestion{
 	text-align: center;

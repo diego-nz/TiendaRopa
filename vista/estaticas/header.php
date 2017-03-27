@@ -19,7 +19,7 @@
         <img src="assets/logo.png" alt="GIFTS">
     </div>
     <div class="buscador">
-        <input type="text" placeholder="buscador" id="txtBuscar">
+           <input type="text" placeholder="buscador" id="txtBuscar">
     </div>
     <div class="carrito">
         <ul>
