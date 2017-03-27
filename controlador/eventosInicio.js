@@ -10,15 +10,28 @@ $(document).ready(function(){
     });
 });
 
+//Cuando se mande llamar la funcion en el parametro clase cambiar por nombre del id o clase del div
+function animacionScroll(clase){
+    var target = jQuery(clase);
+        if (target.length) {
+            $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 500, function(){
+                   $(clase).focus();
+             });
+             return false;
+         }
+}
+
 function siguientePagina(){
     $(document).on("click",".numeroPagina",function(){
+
         var pagina = $(this).attr("id");
         if(pagina>1){
             pagina=pagina+0;
         }else{
             pagina=0;
         }
-
 
         $.ajax({
            beforeSend: function(){
@@ -41,4 +54,8 @@ function siguientePagina(){
             }
         });
     });
+}
+
+function buscador(){
+
 }

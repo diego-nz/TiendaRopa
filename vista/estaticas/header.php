@@ -10,8 +10,8 @@
         <?php }else{ ?>
         <li><a href="?vista=iniciarSesion"><i class="fa fa-lock fa-fw"></i>Inicio sesión</a></li>
         <?php }?>
-        <li><a href="#"><i class="fa fa-building fa-fw"></i>Empresa</a></li>
-        <li><a href="#"><i class="fa fa-info fa-fw"></i>Contacto</a></li>
+        <li><a href="#" onclick="animacionScroll('#informacion');"><i class="fa fa-building fa-fw"></i>Empresa</a></li>
+        <li><a href="#" onclick="animacionScroll('#informacion');"><i class="fa fa-info fa-fw"></i>Contacto</a></li>
     </ul>
 </div>
 <div class="capaLogo">

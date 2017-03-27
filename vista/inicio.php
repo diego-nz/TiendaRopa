@@ -108,7 +108,7 @@ if(isset($_SESSION["nombreUsuario"])){
                             for($i=1;$i<=$total;$i++ ){
                 ?>
                                 <span id="paginas">
-                                    <a href="#" id="<?php echo $i; ?>" class="numeroPagina" onclick="siguientePagina();"><?php echo $i; ?></a>
+                                    <a href="#" id="<?php echo $i; ?>" class="numeroPagina" onclick="siguientePagina();animacionScroll('.productos');"><?php echo $i; ?></a>
                                 </span>
                 <?php
                             }
