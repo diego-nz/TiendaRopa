@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.bxslider').bxSlider({
         auto: true,
         mode: 'fade',
-        speed: 500,
+        speed: 3000,
         adaptiveHeight: true,
         adaptiveHeightSpeed: 200,
         responsive: true,
@@ -59,7 +59,8 @@ $(document).ready(function(){
     });
 });
 
-function cargarProductos(){
+/*function cargarProductos(){
+    $('#resultadosBuscador').html("");
     $.ajax({
        beforeSend: function(){
            cargando();
@@ -78,42 +79,78 @@ function cargarProductos(){
             $('#cargando').html("");
         }
     });
-}
+}*/
 
 $(document).ready(function(){
-       $('#txtBuscar').keyup(function(){
+       $('#txtBuscar').keyup(function(e){
         var busqueda = $('#txtBuscar').val();
 
-        if(busqueda!=""){
             $('#txtBuscar').keyup(function(){
-              $.ajax({
-                  beforeSend: function(){
-                      cargando();
-                  },
-                  url: "modelo/buscador.php",
-                  type: "POST",
-                  data: {producto:busqueda},
-                  success: function(answer){
-                      if(answer==0){
-                          $('#resultadosBuscador').html("");
-                          $('#sinResultados').html("<h1 class='centrado'>Sin resultados</h1>");
-                      }else{
-                          $('.imagenProducto').html("");
-                          $('#resultadosBuscador').html(answer);
-                      }
-                  },
-                  error: function(jqXHR){
-                      console.error(jqXHR);
-                  },
-                  complete: function(){
-                      $('#cargando').html("");
-                  }
-              });
+                    $.ajax({
+                          beforeSend: function(){
+                              cargando();
+                          },
+                          url: "modelo/buscador.php",
+                          type: "POST",
+                          data: {producto:busqueda},
+                          success: function(answer){
+                            if(answer == 0 ){
+                                $('#resultadosBuscador').html("");
+                            }if(answer == 1){
+                                $('#resultadosBuscador').html("<h1>No hay coincidencias</h1>");
+                            }if(answer != 1 && answer!=0){
+                                $('#resultadosBuscador').html(answer);
+                            }
+                          },
+                          error: function(jqXHR){
+                              console.error(jqXHR);
+                          },
+                          complete: function(){
+                              $('#cargando').html("");
+                          }
+                      });
             });
-        }else{
-            $('#sinResultados').html("");
-            $('#resultadosBuscador').html("");
-            $('#masVendidos').trigger("click");
-        }
        });
 });
+
+$(document).on("click",".cate",function(){
+    var idCategoria=$(this).attr("id");
+    $.ajax({
+       beforeSend: function(){
+
+       },
+        url: "",
+        type: "",
+        data:{},
+        success: function(){
+
+        },
+        error: function(){
+
+        },
+        complete: function(){
+
+        }
+    });
+});
+
+//clic flahas obtener total de paginas y en la primera no se puede usar la derecha
+function flechasPaginacion(tipoFlecha){
+    $.ajax({
+       beforeSend: function(){
+           cargando();
+       },
+        url: "",
+        type:"",
+        data:{},
+        success: function(){
+
+        },
+        error: function(){
+
+        },
+        complete: function(){
+
+        }
+    });
+}

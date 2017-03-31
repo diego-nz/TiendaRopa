@@ -78,12 +78,15 @@ th,td{
     vertical-align: middle;
 }
 #txtBuscar{
-    background-image: url("/assets/logo.png");
-    --background-position: right;
-    --background-repeat: no-repeat;
     width: 100%;
     text-align: center;
     vertical-align: bottom;
+    padding: 15px;
+    font-size: 1.2em;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 nav{
     width: 100%;
@@ -225,28 +228,40 @@ footer{
     font-size: 2em;
     text-align: center;
 }
-#buscadorProductos{
-    width: 100%;
-    display: inline-block;
+/*Buscador*/
+#resultadosBuscador{
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 #imagenBuscador{
-    width: 5%;
-    height: 5%;
+    width: 10%;
     display: inline-block;
+    border: solid 1px;
 }
 #productoBuscador{
-    width: 35%;
+    width: 30%;
     display: inline-block;
+    border: solid 1px;
 }
 #precioBuscador{
-    width: 35%;
+    width: 30%;
     display: inline-block;
+    border: solid 1px;
 }
 #botonCompra{
-    width: 20%;
+    width: 25%;
     display: inline-block;
 }
-
+#botonCompra a{
+    border: solid 1px;
+    padding: 4px;
+    background-color: #00c1db;
+    color: #d7f9fc;
+    border-radius: 10px;
+}
 /*Estilos de gestion tablas etc*/
 .menuGestion{
 	text-align: center;

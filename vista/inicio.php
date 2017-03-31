@@ -23,6 +23,7 @@ if(isset($_SESSION["nombreUsuario"])){
 <body>
     <header>
         <?php require_once("estaticas/header.php"); ?>
+        <div id="resultadosBuscador"></div>
     </header>
 
     <nav>
@@ -30,7 +31,7 @@ if(isset($_SESSION["nombreUsuario"])){
             <li><a href="#">Hogar</a></li>
             <li><a href="#">Joyeria y relojes</a></li>
             <li><a href="#">Aniversarios</a></li>
-            <li><a href="#" onclick="cargarProductos();" id="masVendidos">Más vendidos</a></li>
+            <li><a href="#" id="masVendidos">Más vendidos</a></li>
             <li><a href="#">Cumpleaños</a></li>
         </ul>
     </nav>
@@ -49,18 +50,23 @@ if(isset($_SESSION["nombreUsuario"])){
         <div class="categorias">
             <ul>
                 <li class="centrado" style="background-color: #0090F7;"><a href="#" style="color: #FFFFFD;">Categorias</a></li>
-                <li><a href="#">Dama</a></li>
-                <li><a href="#">Caballero</a></li>
-                <li><a href="#"> Niños</a></li>
-                <li><a href="#">Calzado</a></li>
-                <li><a href="">Accesorios</a></li>
+                <?php
+                    require_once("modelo/conexion.php");
+                    $mysqli->real_query("SELECT id_categoria,categoria from t_categorias");
+                    $query=$mysqli->store_result();
+                    if($query){
+                        while($row = $query->fetch_assoc()){
+                ?>
+                <li><a href="#" id="<?php echo $row['id_categoria']; ?>" class="cate"><?php echo $row["categoria"];?></a></li>
+                <?php  }
+                    }
+                ?>
             </ul>
         </div>
 
         <div class="productos">
             <div id="cargando"></div>
             <?php
-            require_once("modelo/conexion.php");
             //for ($i=1 ; $i <=2 ; $i++) {
                 $mysqli->real_query("SELECT id_producto,producto,p_venta,imagen from t_productos limit 0,10");
                 $query=$mysqli->store_result();
@@ -86,30 +92,26 @@ if(isset($_SESSION["nombreUsuario"])){
                         }
                    // }
             ?>
-            <div id="resultadosBuscador">
 
-            </div>
-            <div id="sinResultados"></div>
-
-        </div>
-        <div id="productosPaginados">
 
         </div>
 
             <div id="paginacion">
+                <?php
 
-               <span id="flechaIzquierda">
+                $mysqli -> real_query("SELECT count(id_producto)'total' FROM t_productos");
+                    $query=$mysqli->store_result();
+                    if($query){
+                        $row = $query->fetch_assoc();
+                            $total = intval($row['total']/10);
+
+                ?>
+               <span id="flechaIzquierda" onclick="flechasPaginacion('izquierda');">
                 <a href="#"><i class="fa fa-chevron-circle-left fa-5x"></i></a>
                </span>
 
                 <!---AJAX consulta-->
                 <?php
-
-                    $mysqli -> real_query("SELECT count(id_producto)'total' FROM t_productos");
-                    $query=$mysqli->store_result();
-                    if($query){
-                        $row = $query->fetch_assoc();
-                            $total = intval($row['total']/10);
                             for($i=1;$i<=$total;$i++ ){
                 ?>
                                 <span id="paginas">
@@ -120,7 +122,7 @@ if(isset($_SESSION["nombreUsuario"])){
                     }
                 ?>
 
-                <span id="flechaDerecha">
+                <span id="flechaDerecha" onclick="flechasPaginacion('derecha'); animacionScroll('.productos')">
                     <a href="#"><i class="fa fa-chevron-circle-right fa-5x"></i></a>
                 </span>
 
