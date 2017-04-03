@@ -1,3 +1,6 @@
+<!--Boton menu movil-->
+<input type="checkbox" id="btnMenu">
+<label id="lblHamburguer" for="btnMenu"><i class="fa fa-bars fa-3x"></i></label>
 <div class="menu">
     <ul>
         <!--Sustituir los # con el nombre de la pagina a donde va ser dirigido-->

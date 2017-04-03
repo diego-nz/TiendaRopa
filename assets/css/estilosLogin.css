@@ -7,6 +7,9 @@
     padding: 50px;
     text-align: center;
 }
+.login input{
+ font-size: 1.3em;   
+}
 .cajas{
     display: block;
     margin: 10px;
@@ -33,4 +36,27 @@
 .boton:hover{
     background-color: #ddd;
 
+}
+@media only screen and (max-width: 980px) {
+    .login{
+        width: 50%;
+    }
+    .login input{
+        font-size: 1.4em;
+    }
+}
+@media only screen and (max-width: 680px) {
+    .login{
+        border: none;
+    }
+    .cajas{
+        font-size: 1.4em;
+        border: none;
+        border-bottom: solid;
+    }
+    .cajas:focus{
+        border: none;
+        outline: none;
+        border-bottom: groove;
+    }
 }
