@@ -5,8 +5,7 @@ if(isset($_SESSION["nombreUsuario"])){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -36,7 +35,7 @@ if(isset($_SESSION["nombreUsuario"])){
         </ul>
     </nav>
     <section>
-        <!----Aqui va el slider--->
+        
         <div class="" id="slider">
            <ul class="bxslider">
               <li><img src="imagenesSlider/1.jpg" /></li>
@@ -68,14 +67,14 @@ if(isset($_SESSION["nombreUsuario"])){
             <div id="cargando"></div>
             <?php
             //for ($i=1 ; $i <=2 ; $i++) {
-                $mysqli->real_query("SELECT id_producto,producto,p_venta,imagen from t_productos limit 0,10");
+                $mysqli->real_query("SELECT id_producto,producto,p_venta,imagen from t_productos order by rand() limit 0,10");
                 $query=$mysqli->store_result();
                 if($query){
                     while($row = $query->fetch_assoc()){
 
             ?>
+            <!--vista se refiere al nombre de la pagina(sin .php) & significa otra variable y pro es la variable del id-->
             <div class="imagenProducto">
-               <!---vista se refiere al nombre de la pagina(sin .php) & significa otra variable y pro es la variable del id-->
                 <a href="?vista=producto&pro="<?php echo $row['id_producto']; ?>><img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
                 <div class="precioProducto">
                     <?php echo '$'.$row["p_venta"]; ?>
@@ -110,7 +109,7 @@ if(isset($_SESSION["nombreUsuario"])){
                 <a href="#"><i class="fa fa-chevron-circle-left fa-5x"></i></a>
                </span>
 
-                <!---AJAX consulta-->
+                <!--AJAX consulta-->
                 <?php
                             for($i=1;$i<=$total;$i++ ){
                 ?>

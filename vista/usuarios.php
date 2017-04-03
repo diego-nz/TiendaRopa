@@ -1,5 +1,5 @@
 <?php require_once( "modelo/conexion.php");
-session_start();
+
 $query="SELECT id_usuario,usuario,pass,nivel FROM t_usuarios" ;
 $resultado=$mysqli ->query($query);
 ?>
@@ -20,11 +20,13 @@ $resultado=$mysqli ->query($query);
   <header>
       <?php require_once("vista/estaticas/header.php"); ?>
   </header>
-    <center>
-        <a href="?vista=nuevo_usuario">
-            <img src="assets/agregar.png">
+
+    <div class="imagenAgregar">     
+        <a href="?vista=nueva_categoria">
+            <img src="assets/agregar.png" class="">
         </a>
-    </center>
+    </div>
+
     <center>
         <h1>Registro</h1></center>
     <center>
@@ -63,10 +65,14 @@ $resultado=$mysqli ->query($query);
                         <?php echo $row[ 'nivel'];?>
                     </td>
                     <td>
-                        <a href="?vista=modificar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/edit.png"></a>
+                        <div class="imagenEditarEliminar">
+                            <a href="?vista=modificar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/edit.png"></a>   
+                        </div>
                     </td>
                     <td>
-                        <a href="?vista=eliminar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/eliminar.png"></a>
+                        <div class="imagenEditarEliminar">
+                            <a href="?vista=eliminar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/eliminar.png"></a>   
+                        </div>
                     </td>
                 </tr>
                 <?php } ?>

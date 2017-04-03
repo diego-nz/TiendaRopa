@@ -1,5 +1,4 @@
 <?php
-session_start();
 	require_once("modelo/conexion.php");
 	$query="SELECT id_categoria,categoria FROM t_categorias";
 	$resultado=$mysqli ->query($query);
@@ -17,12 +16,12 @@ session_start();
 	    <?php require_once("vista/estaticas/header.php"); ?>
 	</header>
 	<body>
-	<center>
 
-	<a href="?vista=nueva_categoria">
-	<img src="assets/agregar.png" >
-	</a>
-	 </center>
+	<div class="imagenAgregar">		
+		<a href="?vista=nueva_categoria">
+			<img src="assets/agregar.png" class="">
+		</a>
+	</div>
 
 		<center><h1>Agregar una nueva categoria</h1></center>
 
@@ -50,10 +49,14 @@ session_start();
 						<td><?php echo $row['categoria'];?></td>
 
 						<td>
-							<a href="?vista=modificar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/edit.png"></a>
+							<div class="imagenEditarEliminar">
+								<a href="?vista=modificar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/edit.png"></a>
+							</div>
 						</td>
 						<td>
-							<a href="?vista=eliminar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/eliminar.png"></a>
+							<div class="imagenEditarEliminar">
+								<a href="?vista=eliminar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/eliminar.png"></a>
+							</div>
 						</td>
 					</tr>
 					<?php } ?>

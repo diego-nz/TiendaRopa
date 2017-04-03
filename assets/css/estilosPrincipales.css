@@ -19,6 +19,18 @@ th,td{
 	padding: 0.25;
 	border: 1px solid #ccc;
 }
+.imagenAgregar{
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imagenEditarEliminar{
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 /*#slider{
     width: 70%;
     height: auto;
