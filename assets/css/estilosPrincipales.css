@@ -95,6 +95,9 @@ th,td{
     vertical-align: middle;
 }
 #txtBuscar{
+    background-image: url("../search.png");
+    background-position: left;
+    background-repeat: no-repeat;
     width: 100%;
     text-align: center;
     vertical-align: bottom;
@@ -272,27 +275,27 @@ footer{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    border-right: groove;
+    border-bottom: groove;
+    border-left: groove;
 }
-#imagenBuscador{
+/*#imagenBuscador{
     width: 10%;
     display: inline-block;
-    border: solid 1px;
-}
+}*/
 #productoBuscador{
     width: 30%;
     display: inline-block;
-    border: solid 1px;
 }
 #precioBuscador{
     width: 30%;
     display: inline-block;
-    border: solid 1px;
 }
-#botonCompra{
+.botonCompra{
     width: 25%;
     display: inline-block;
 }
-#botonCompra a{
+.botonCompra a{
     border: solid 1px;
     padding: 4px;
     background-color: #00c1db;

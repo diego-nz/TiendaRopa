@@ -23,6 +23,7 @@
     </div>
     <div class="buscador">
            <input type="text" placeholder="buscador" id="txtBuscar">
+           <div id="resultadosBuscador" style="display: none;"></div>
     </div>
     <div class="carrito">
         <ul>

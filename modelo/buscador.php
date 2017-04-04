@@ -16,10 +16,9 @@ if($query){
 
     }else if($prod != "" and mysqli_num_rows($query)){
         while($row = $query -> fetch_assoc()){
-                echo '  <span id="imagenBuscador"><img src="imagenesProductos/'; echo $row["imagen"]; echo '" alt="" /></span>
-                        <span id="productoBuscador">'; echo $row["producto"]; echo '</span>
+                echo '  <span id="productoBuscador">'; echo $row["producto"]; echo '</span>
                         <span id="precioBuscador">'; echo $row["p_venta"]; echo '</span>
-                        <span id="botonCompra"><a href="#" id="">comprar</a></span>';
+                        <span class="botonCompra"><a href="#" id="">comprar</a></span>';
         }
     }
 

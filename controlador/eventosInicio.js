@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 //Despliega animacion de cargando
 function cargando(){
-    $("#cargando").html('<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i><span class="sr-only">Cargando...</span>');
+    $("#cargando").html('<div style="display:block; margin-left:auto; margin-right:auto;"><i class="fa fa-refresh fa-spin fa-5x"></i><span class="sr-only">Cargando...</span></div>');
 }
 
 //Cuando se mande llamar la funcion en el parametro clase cambiar por nombre del id o clase del div
@@ -86,6 +86,7 @@ $(document).ready(function(){
         var busqueda = $('#txtBuscar').val();
 
             $('#txtBuscar').keyup(function(){
+              $('#resultadosBuscador').show();
                     $.ajax({
                           beforeSend: function(){
                               cargando();
@@ -96,6 +97,7 @@ $(document).ready(function(){
                           success: function(answer){
                             if(answer == 0 ){
                                 $('#resultadosBuscador').html("");
+                                $('#resultadosBuscador').hide();
                             }if(answer == 1){
                                 $('#resultadosBuscador').html("<h1>No hay coincidencias</h1>");
                             }if(answer != 1 && answer!=0){
@@ -117,40 +119,42 @@ $(document).on("click",".cate",function(){
     var idCategoria=$(this).attr("id");
     $.ajax({
        beforeSend: function(){
-
+        cargando();
        },
-        url: "",
-        type: "",
-        data:{},
-        success: function(){
-
+        url: "modelo/categoria.php",
+        type: "POST",
+        data:{categoria:idCategoria},
+        success: function(answer){
+          $(".productos").html("");
+          $(".productos").html(answer);
         },
-        error: function(){
-
+        error: function(error){
+          console.error(error);
         },
         complete: function(){
-
+          $('#cargando').html("");
         }
     });
 });
 
-//clic flahas obtener total de paginas y en la primera no se puede usar la derecha
+//clic flahas obtener total de paginas y en la primera solo se puede usar la derecha
 function flechasPaginacion(tipoFlecha){
+    
     $.ajax({
-       beforeSend: function(){
-           cargando();
-       },
-        url: "",
-        type:"",
-        data:{},
-        success: function(){
-
+        beforeSend: function(){
+             cargando();
+        },
+        url: "modelo/paginadorFlecha.php",
+        type:"GET",
+        data:{p:pagina},
+        success: function(answer){
+          
         },
         error: function(){
 
         },
         complete: function(){
-
+          $('#cargando').html("");
         }
     });
 }

@@ -22,7 +22,7 @@ if(isset($_SESSION["nombreUsuario"])){
 <body>
     <header>
         <?php require_once("estaticas/header.php"); ?>
-        <div id="resultadosBuscador"></div>
+        
     </header>
 
     <nav>
@@ -56,7 +56,7 @@ if(isset($_SESSION["nombreUsuario"])){
                     if($query){
                         while($row = $query->fetch_assoc()){
                 ?>
-                <li><a href="#" id="<?php echo $row['id_categoria']; ?>" class="cate"><?php echo $row["categoria"];?></a></li>
+                <a href="#" id="<?php echo $row['id_categoria']; ?>" class="cate" onclick="animacionScroll('.productos');"><li><?php echo $row["categoria"];?></li></a>
                 <?php  }
                     }
                 ?>
@@ -92,7 +92,6 @@ if(isset($_SESSION["nombreUsuario"])){
                    // }
             ?>
 
-
         </div>
 
             <div id="paginacion">
@@ -105,9 +104,11 @@ if(isset($_SESSION["nombreUsuario"])){
                             $total = intval($row['total']/10);
 
                 ?>
+                <!--
                <span id="flechaIzquierda" onclick="flechasPaginacion('izquierda');">
-                <a href="#"><i class="fa fa-chevron-circle-left fa-5x"></i></a>
+                    <a href="#"><i class="fa fa-chevron-circle-left fa-5x"></i></a>
                </span>
+               -->
 
                 <!--AJAX consulta-->
                 <?php
@@ -120,11 +121,11 @@ if(isset($_SESSION["nombreUsuario"])){
                             }
                     }
                 ?>
-
-                <span id="flechaDerecha" onclick="flechasPaginacion('derecha'); animacionScroll('.productos')">
+                <!--
+                <span id="flechaDerecha" onclick="flechasPaginacion('derecha'); animacionScroll('.productos');">
                     <a href="#"><i class="fa fa-chevron-circle-right fa-5x"></i></a>
                 </span>
-
+                -->
 
 
             </div>
