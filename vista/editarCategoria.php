@@ -17,16 +17,15 @@ $query="UPDATE t_categorias SET categoria='$categoria' WHERE id_categoria='$id'"
 $resultado=$mysqli->query($query);
     header("Location:?vista=categoria");
 }
-
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
     <link rel="stylesheet" href="assets/css/estilosMovil.css">
+    <link rel="stylesheet" href="assets/css/estilosGestion.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <title>Categorias</title>
 </head>
@@ -36,10 +35,11 @@ $resultado=$mysqli->query($query);
   </header>
 
 		<center><h1>Modificar Categoria</h1></center>
-		<form name="cambios_Categoria" method="POST" action="#">
+		<div class="formularioGestion">
+			<form name="cambios_Categoria" method="POST" action="#">
 		<br>
 			<center>
-			<table width=50%>
+				<table width=50%>
 				<tr>
 					<input type="hidden" name="id" value="<?php echo $id; ?>">
 					<td width="20"><b>Categoria: </b></td>
@@ -52,6 +52,7 @@ $resultado=$mysqli->query($query);
 			</table>
 			</center>
 		</form>
+		</div>
 	<footer>
 	    <?php require_once("vista/estaticas/footer.html"); ?>
 	</footer>

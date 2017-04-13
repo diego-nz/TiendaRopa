@@ -18,6 +18,7 @@ header("Location:?vista=categoria");
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
     <link rel="stylesheet" href="assets/css/estilosMovil.css">
+    <link rel="stylesheet" href="assets/css/estilosGestion.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <title>Nueva categoria</title>
 </head>
@@ -27,18 +28,20 @@ header("Location:?vista=categoria");
   </header>
 	<center>
 		<h1>Nueva Categoria</h1>
-		<form name="nueva_categoria" method="POST" action="#">
-		<table width="50%">
-			<tr>
-				<td width="20"><b>Categoria</b></td>
-				<td width="30"><input type=text name=txtNCategoria size="25"/></td>
-			</tr>
-			<tr>
-				<td colspan="2"><center><input type=submit name="enviar" value="Registrar"/></center></td>
-			</tr>
-		</table>
-
-		</form>
+		<div class="formularioGestion">
+			<form name="nueva_categoria" method="POST" action="#">
+				<table width="50%">
+					<tr>
+						<td width="20"><b>Categoria</b></td>
+						<td width="30"><input type=text name=txtNCategoria size="25"/></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><input type=submit name="enviar" value="Registrar"/></center></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
 	</center>
 	<footer>
 	    <?php require_once("vista/estaticas/footer.html"); ?>

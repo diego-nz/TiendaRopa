@@ -1,0 +1,54 @@
+.formularioGestion table th{
+    border: none;
+}
+.formularioGestion table td{
+    border: none;
+    font-size: 1.2em;
+}
+.formularioGestion table td input{
+    padding: 1%;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    border-bottom: groove;
+}
+.formularioGestion table td input:focus{
+    border: none;
+    outline: none;
+    border-bottom: groove #00c4df;
+}
+.formularioGestion table td select{
+    background: transparent;
+    border: none;
+    font-size: .8em;
+    padding: 1%;
+    width: 50%;
+}
+.contenedor{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+table{
+    width: 60%;
+    text-align: center;
+    font-size: 1.2em;
+}
+table td{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    border-bottom: groove;
+}
+table th{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    border-bottom: groove;
+}
+.imagenAgregar{
+    width: 10%;
+    display: block;;
+    margin-right: auto;
+    margin-left: auto;
+}

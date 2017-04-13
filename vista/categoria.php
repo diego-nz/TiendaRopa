@@ -4,13 +4,16 @@
 	$resultado=$mysqli ->query($query);
 ?>
 
-<html>
-	<head>
-
-		<title>Categorias</title>
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
     <link rel="stylesheet" href="assets/css/estilosMovil.css">
+    <link rel="stylesheet" href="assets/css/estilosGestion.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<title>Categorias</title>
 	</head>
 	<header>
 	    <?php require_once("vista/estaticas/header.php"); ?>
@@ -18,27 +21,29 @@
 	<body>
 
 	<div class="imagenAgregar">		
-		<a href="?vista=nueva_categoria">
-			<img src="assets/agregar.png" class="">
+		<a href="?vista=nuevaCategoria">
+			<img src="assets/agregar.png" alt="agregar" />
 		</a>
 	</div>
 
-		<center><h1>Agregar una nueva categoria</h1></center>
+		<center><h1>Agregar nueva categoria</h1></center>
 
 	<center>
 		<table>
 			<thead>
 				<tr>
-					<td >
-						<b>id_Categoria</b>
-					</td>
-					<td >
-						<b>Categoria</b>
-					</td>
-
-					<td></td>
-					<td> </td>
-
+					<th>
+						Identificador
+					</th>
+					<th>
+						Categoria
+					</th>
+					<th>
+						Editar
+					</th>
+					<th>
+						Eliminar
+					</th>
 				</tr>
 
 			</thead>
@@ -49,14 +54,14 @@
 						<td><?php echo $row['categoria'];?></td>
 
 						<td>
-							<div class="imagenEditarEliminar">
-								<a href="?vista=modificar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/edit.png"></a>
-							</div>
+								<a href="?vista=editarCategoria&id=<?php echo $row["id_categoria"];?>">
+									<i class="fa fa-pencil-square-o fa-lg"></i>
+								</a>
 						</td>
 						<td>
-							<div class="imagenEditarEliminar">
-								<a href="?vista=eliminar_Categoria&id=<?php echo $row["id_categoria"];?>"><img src="assets/eliminar.png"></a>
-							</div>
+								<a href="?vista=eliminarCategoria&id=<?php echo $row["id_categoria"];?>">
+									<i class="fa fa-trash fa-lg"></i>
+								</a>
 						</td>
 					</tr>
 					<?php } ?>

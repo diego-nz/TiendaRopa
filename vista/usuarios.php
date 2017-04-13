@@ -4,7 +4,7 @@ $query="SELECT id_usuario,usuario,pass,nivel FROM t_usuarios" ;
 $resultado=$mysqli ->query($query);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,8 @@ $resultado=$mysqli ->query($query);
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/estilosPrincipales.css">
     <link rel="stylesheet" href="assets/css/estilosMovil.css">
+    <link rel="stylesheet" href="assets/css/estilosGestion.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <title>Usuarios</title>
 </head>
 
@@ -22,32 +24,32 @@ $resultado=$mysqli ->query($query);
   </header>
 
     <div class="imagenAgregar">     
-        <a href="?vista=nueva_categoria">
+        <a href="?vista=nuevoUsuario">
             <img src="assets/agregar.png" class="">
         </a>
     </div>
 
     <center>
-        <h1>Registro</h1></center>
+        <h1>Agregar nuevo usuario</h1></center>
     <center>
         <table id="registros">
             <thead>
                 <tr>
-                    <td>
-                        <b>id_Usuario</b>
-                    </td>
-                    <td>
-                        <b>Usuario</b>
-                    </td>
-                    <td>
-                        <b>Nivel</b>
-                    </td>
-                    <td>
-                    <b>Editar</b>
-                    </td>
-                    <td>
-                    <b>Eliminar</b>
-                    </td>
+                    <th>
+                        Identificador
+                    </th>
+                    <th>
+                        Usuario
+                    </th>
+                    <th>
+                        Nivel
+                    </th>
+                    <th>
+                        Editar
+                    </th>
+                    <th>
+                    Eliminar
+                    </th>
 
                 </tr>
 
@@ -65,14 +67,14 @@ $resultado=$mysqli ->query($query);
                         <?php echo $row[ 'nivel'];?>
                     </td>
                     <td>
-                        <div class="imagenEditarEliminar">
-                            <a href="?vista=modificar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/edit.png"></a>   
-                        </div>
+                        <a href="?vista=editarUsuario&id=<?php echo $row["id_usuario"];?>">
+                            <i class="fa fa-pencil-square-o fa-lg"></i>
+                        </a>   
                     </td>
                     <td>
-                        <div class="imagenEditarEliminar">
-                            <a href="?vista=eliminar_usuario&id=<?php echo $row[" id_usuario "];?>"><img src="assets/eliminar.png"></a>   
-                        </div>
+                        <a href="?vista=eliminarUsuario&id=<?php echo $row["id_usuario"];?>">
+                            <i class="fa fa-trash fa-lg"></i>
+                        </a>   
                     </td>
                 </tr>
                 <?php } ?>

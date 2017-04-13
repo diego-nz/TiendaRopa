@@ -7,14 +7,14 @@
         <li><a href="?vista=inicio"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
         <li><a href="#"><i class="fa fa-user fa-fw"></i>Mi cuenta</a></li>
         <li><a href="#"><i class="fa fa-heart fa-fw"></i>Favoritos</a></li>
+        <li><a href="#" onclick="animacionScroll('#informacion');"><i class="fa fa-building fa-fw"></i>Empresa</a></li>
+        <li><a href="#" onclick="animacionScroll('#informacion');"><i class="fa fa-info fa-fw"></i>Contacto</a></li>
         <?php
         if(isset($_SESSION["nombreUsuario"])){?>
         <li><a href="?vista=cerrarSesion"><i class="fa fa-lock fa-fw"></i>Cerrar sesión</a></li>
         <?php }else{ ?>
         <li><a href="?vista=iniciarSesion"><i class="fa fa-lock fa-fw"></i>Inicio sesión</a></li>
         <?php }?>
-        <li><a href="#" onclick="animacionScroll('#informacion');"><i class="fa fa-building fa-fw"></i>Empresa</a></li>
-        <li><a href="#" onclick="animacionScroll('#informacion');"><i class="fa fa-info fa-fw"></i>Contacto</a></li>
     </ul>
 </div>
 <div class="capaLogo">

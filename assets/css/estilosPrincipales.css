@@ -10,27 +10,6 @@ img{
     width: 100%;
     height: auto;
 }
-table{
-	border-collapse: collapse;
-	width: 70%;
-	align-content: center;
-}
-th,td{
-	padding: 0.25;
-	border: 1px solid #ccc;
-}
-.imagenAgregar{
-    width: 10%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.imagenEditarEliminar{
-    width: 40%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 /*#slider{
     width: 70%;
     height: auto;
@@ -279,10 +258,6 @@ footer{
     border-bottom: groove;
     border-left: groove;
 }
-/*#imagenBuscador{
-    width: 10%;
-    display: inline-block;
-}*/
 #productoBuscador{
     width: 30%;
     display: inline-block;
