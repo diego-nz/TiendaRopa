@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION["nombreUsuario"])){
-   echo "Bienvenido ".$_SESSION["nombreUsuario"]." ".$_SESSION["nivelUsuario"];
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,11 +15,9 @@ if(isset($_SESSION["nombreUsuario"])){
     <link rel="stylesheet" href="assets/css/estilosMovil.css">
     <title>Gifts</title>
 </head>
-
 <body>
     <header>
         <?php require_once("estaticas/header.php"); ?>
-        
     </header>
 
     <nav>

@@ -4,5 +4,5 @@
 	$query="DELETE FROM t_categorias WHERE id_categoria='$id'";
 	$resultado=$mysqli->query($query);
 
-    header("Location:?vista=categoria");
+    header("Location:?vista=categoria&estado=1");
 ?>

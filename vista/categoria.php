@@ -19,7 +19,11 @@
 	    <?php require_once("vista/estaticas/header.php"); ?>
 	</header>
 	<body>
-
+	<?php if(isset($_GET["estado"]) and $_GET["estado"] == 1){ ?>
+	<div id="estado">
+		Categoria eliminada exitosamente
+	</div>
+	<?php }?>
 	<div class="imagenAgregar">		
 		<a href="?vista=nuevaCategoria">
 			<img src="assets/agregar.png" alt="agregar" />

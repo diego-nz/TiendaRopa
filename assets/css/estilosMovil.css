@@ -68,7 +68,6 @@
         font-size: 1.5em;
     }
     .categorias ul li{
-        border-bottom: solid 1px;
         list-style-type: none;
         padding: 10px;
         background-color: #F0F0F0;
@@ -161,8 +160,8 @@
 /*celulares*/
 @media only screen and (max-width: 680px) {
     body{
-        margin-left: 0: 
-        margin-right 0;
+        margin-left: 0; 
+        margin-right: 0;
     }
     /*********Movil**************/
     #btnMenu:checked ~.menu{
@@ -304,8 +303,5 @@
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-    }
-    .menuGestion ul{
-        border: solid;
     }
 }

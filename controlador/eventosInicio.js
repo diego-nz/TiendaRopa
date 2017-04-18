@@ -84,7 +84,6 @@ $(document).ready(function(){
 $(document).ready(function(){
        $('#txtBuscar').keyup(function(e){
         var busqueda = $('#txtBuscar').val();
-
             $('#txtBuscar').keyup(function(){
               $('#resultadosBuscador').show();
                     $.ajax({
@@ -97,7 +96,7 @@ $(document).ready(function(){
                           success: function(answer){
                             if(answer == 0 ){
                                 $('#resultadosBuscador').html("");
-                                $('#resultadosBuscador').hide();
+                                //$('#resultadosBuscador').hide();
                             }if(answer == 1){
                                 $('#resultadosBuscador').html("<h1>No hay coincidencias</h1>");
                             }if(answer != 1 && answer!=0){

@@ -2,10 +2,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border: solid 1px;
+    border: groove 2px #00bed7;
     width: 30%;
-    padding: 50px;
+    padding-left: 2%;
+    padding-right: 4%;
     text-align: center;
+    background-color: #def8fb;
 }
 .login input{
  font-size: 1.3em;   
@@ -17,7 +19,7 @@
     margin-right: auto;
     width: 100%;
     padding: 5px;
-    border: solid 2px;
+    border: groove 2px;
 }
 .login label{
     display: block;
@@ -35,11 +37,22 @@
 }
 .boton:hover{
     background-color: #ddd;
-
+}
+#registro{
+    padding: 5%;
+    margin-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
+#registro a:hover{
+    text-decoration: underline;
 }
 @media only screen and (max-width: 980px) {
     .login{
-        width: 50%;
+        width: 60%;
+        margin-top: 8%;
     }
     .login input{
         font-size: 1.4em;

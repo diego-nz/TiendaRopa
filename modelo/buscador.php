@@ -16,9 +16,12 @@ if($query){
 
     }else if($prod != "" and mysqli_num_rows($query)){
         while($row = $query -> fetch_assoc()){
-                echo '  <span id="productoBuscador">'; echo $row["producto"]; echo '</span>
+                echo '  <div id="filaBuscador">
+                        <a href="#">
+                        <span id="productoBuscador">'; echo $row["producto"]; echo '</span>
                         <span id="precioBuscador">'; echo $row["p_venta"]; echo '</span>
-                        <span class="botonCompra"><a href="#" id="">comprar</a></span>';
+                        </a>
+                        </div>';
         }
     }
 
