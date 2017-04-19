@@ -6,7 +6,7 @@ if(isset($_POST["txtNCategoria"])){
     $query="INSERT INTO t_categorias(categoria) VALUES ('$categoria')";
     $resultado=$mysqli->query($query);
 
-header("Location:?vista=categoria");
+header("Location:?vista=categoria&estado=3");
 
 }
 

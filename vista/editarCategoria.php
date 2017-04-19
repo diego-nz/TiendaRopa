@@ -15,7 +15,7 @@ if(isset($_POST["txtCategoria"])){
 $query="UPDATE t_categorias SET categoria='$categoria' WHERE id_categoria='$id'";
 
 $resultado=$mysqli->query($query);
-    header("Location:?vista=categoria");
+    header("Location:?vista=categoria&estado=2");
 }
 ?>
 <!DOCTYPE html>

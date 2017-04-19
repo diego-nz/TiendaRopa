@@ -8,7 +8,7 @@ if(isset($_POST["txtNombre"])){
     $query="INSERT INTO t_usuarios(usuario,nivel,pass) VALUES ('$nombre','$nivel','$contrasenia')";
     $resultado=$mysqli->query($query);
     
-header("Location:?vista=usuarios");
+header("Location:?vista=usuarios&estado=3");
 }	
 ?>
 <!DOCTYPE html>

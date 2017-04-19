@@ -26,7 +26,7 @@ $query="UPDATE t_proveedores SET empresa='".$empresa."',contacto='".$contacto."'
     $resultado=$mysqli->query($query);
     
     
-   header("Location:?vista=proveedores");
+   header("Location:?vista=proveedores&estado=2");
   }//Envio de formulario
 }//Llenar campos
 ?>

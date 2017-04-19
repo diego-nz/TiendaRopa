@@ -15,7 +15,7 @@ $row=$resultado->fetch_assoc();
 		
 			$query="UPDATE t_usuarios SET usuario='".$usuario."',pass='".$pass."',nivel='".$nivel."' WHERE id_usuario='$id' ";
 			$resultado=$mysqli->query($query);
-	        header("Location:?vista=usuarios");
+	        header("Location:?vista=usuarios&estado=2");
 		
 	}
 }

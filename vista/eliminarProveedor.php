@@ -5,7 +5,7 @@
 	$query="DELETE FROM t_proveedores WHERE id_proveedor='$id'";
 	$resultado=$mysqli->query($query);
     
-    header("Location:?vista=proveedores");
+    header("Location:?vista=proveedores&estado=1");
 ?>
 	<!DOCTYPE html>
 <html lang="es">

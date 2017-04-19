@@ -16,7 +16,7 @@
     $resultado=$mysqli->query($query);
   
 	
-	header("Location:?vista=proveedores");
+	header("Location:?vista=proveedores&estado=3");
     
 	}	
 ?>

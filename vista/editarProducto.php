@@ -24,7 +24,7 @@ $row=$resultado->fetch_assoc();
 	        $destino = "imagenesProductos/".$nombre_img;
 	        move_uploaded_file($_FILES['imagen']['tmp_name'],$destino);
 	    
-			header("Location:?vista=productos");
+			header("Location:?vista=productos&estado=2");
 	    
 	    }//llave de cierre de tipo de imagen
   	}//Envio de formulario

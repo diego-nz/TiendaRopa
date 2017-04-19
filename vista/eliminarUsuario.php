@@ -5,5 +5,5 @@
 	$query="DELETE FROM t_usuarios WHERE id_usuario='$id'";
 	$resultado=$mysqli->query($query);
     
-    header("Location:?vista=usuarios");
+    header("Location:?vista=usuarios&estado=1");
 ?>

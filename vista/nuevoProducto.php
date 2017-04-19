@@ -18,7 +18,7 @@
     $destino = "imagenesProductos/".$nombre_img;
     move_uploaded_file($_FILES['imagen']['tmp_name'],$destino);
 	
-   header("Location:?vista=productos");
+   header("Location:?vista=productos&estado=3");
     
  }//LLAVE DE IMAGEN
 }//POST	

@@ -22,7 +22,43 @@ $resultado=$mysqli ->query($query);
   <header>
       <?php require_once("vista/estaticas/header.php"); ?>
   </header>
-
+<?php if(isset($_GET["estado"])){ 
+        $accion=$_GET["estado"];
+        switch ($accion) {
+            case '1':
+                echo '<div id="estado" style="display: block; margin-left: auto;
+                            margin-right: auto; background-color: #00a577;
+                            width: 30%; padding: 5px; border-radius: 20px;
+                            font-size: 1.2em; color: #FAFAFA; text-align:center;
+                            margin-bottom: 2%;" >
+                        Proveedor eliminado exitosamente
+                    </div>';
+                break;
+            case '2':
+                echo '<div id="estado" style="display: block; margin-left: auto;
+                            margin-right: auto; background-color: #00a577;
+                            width: 30%; padding: 5px; border-radius: 20px;
+                            font-size: 1.2em; color: #FAFAFA; text-align:center;
+                            margin-bottom: 2%;" >
+                        Proveedor modificado exitosamente
+                    </div>';
+                break;
+            case '3':
+                echo '<div id="estado" style="display: block; margin-left: auto;
+                            margin-right: auto; background-color: #00a577;
+                            width: 30%; padding: 5px; border-radius: 20px;
+                            font-size: 1.2em; color: #FAFAFA; text-align:center;
+                            margin-bottom: 2%;" >
+                        Proveedor agregado exitosamente
+                    </div>';
+                break;
+            
+            default:
+                echo "";
+                break;
+        }
+    }
+?>
     <div class="imagenAgregar">     
         <a href="?vista=nuevoUsuario">
             <img src="assets/agregar.png" class="">

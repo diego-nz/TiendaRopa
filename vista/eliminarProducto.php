@@ -5,6 +5,6 @@
 	$query="DELETE FROM t_productos WHERE id_producto='$id'";
 	$resultado=$mysqli->query($query);
     
-    header("Location:?vista=productos");
+    header("Location:?vista=productos&estado=1");
 ?>
 	
