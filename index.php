@@ -8,7 +8,7 @@
         	if($vista == "inicio" || $vista == "iniciarSesion" || $vista == "registro" || $vista == "producto"){
         		#incluye la vista
         		include('vista/'.strtolower($vista).'.php');
-                /*|| $vista == "carritoCompra" || $vista == "mostrarCarrito" || $vista = "eliminaCarrito"	*/
+                /*|| $vista == "carritoCompra" || $vista == "mostrarCarrito" || $vista = "eliminaCarrito" || $vista = "generador.php" */
         	
         	}else{#Si no es publica entonces es privada.
         		#Debe existir una sesion.

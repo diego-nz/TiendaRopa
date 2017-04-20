@@ -21,7 +21,7 @@
     
     <section>
 
-<form method="post" action="?vista=generador.php">
+<form method="post" action="?vista=generador">
 
 <?php
 //session_start();
@@ -202,7 +202,7 @@ if(empty($_SESSION['carrito'])){
             
         </tr>
         </tbody>
-       <input type='submit' value='Generar PDF' />
+
         
         <?php } ?>
         
