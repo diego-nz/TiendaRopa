@@ -33,10 +33,16 @@ session_start();
         
         <div class="" id="slider">
            <ul class="bxslider">
-              <li><img src="imagenesSlider/1.jpg" /></li>
-              <li><img src="imagenesSlider/2.jpg" /></li>
-              <li><img src="imagenesSlider/3.jpg" /></li>
-              <li><img src="imagenesSlider/4.jpg" /></li>
+           <?php
+           require_once("modelo/conexion.php");
+            $query="SELECT imagen FROM t_slider";
+            $resultado=$mysqli ->query($query);
+                    while($row=$resultado->fetch_assoc()){ ?>
+                    <tr>
+                        <td><li><img src="imagenesSlider/<?php echo $row['imagen']; ?>"/></li></td>
+                    </tr>
+                    <?php } ?>
+           ?>
             </ul>
           </div>
 
@@ -45,7 +51,6 @@ session_start();
             <ul>
                 <li class="centrado" style="background-color: #0090F7;"><a href="#" style="color: #FFFFFD;">Categorias</a></li>
                 <?php
-                    require_once("modelo/conexion.php");
                     $mysqli->real_query("SELECT id_categoria,categoria from t_categorias");
                     $query=$mysqli->store_result();
                     if($query){
@@ -70,7 +75,8 @@ session_start();
             ?>
             <!--vista se refiere al nombre de la pagina(sin .php) & significa otra variable y pro es la variable del id-->
             <div class="imagenProducto">
-                <a href="?vista=producto&pro="<?php echo $row['id_producto']; ?>><img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
+                <?php $prod = $row['id_producto'];?>
+<a href="?vista=producto&pro=<?php echo $prod; ?>" > <img src="imagenesProductos/<?php echo $row['imagen']; ?>" alt="" /></a>
                 <div class="precioProducto">
                     <?php echo '$'.$row["p_venta"]; ?>
                 </div>
@@ -78,7 +84,7 @@ session_start();
                     <?php echo $row["producto"]; ?>
                 </div>
 
-                <a href="#" class="centrado btn">comprar</a>
+                <a href="?vista=producto" class="centrado btn">comprar</a>
             </div>
 
             <?php

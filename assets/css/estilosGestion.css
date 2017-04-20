@@ -7,7 +7,7 @@
 }
 .formularioGestion table td input{
     padding: 1%;
-    font-size: 1.2em;
+    font-size: .8em;
     border: none;
     outline: none;
     border-bottom: groove;
@@ -29,23 +29,7 @@
     padding: 0;
     margin: 0;
 }
-table{
-    width: 5%;
-    text-align: center;
-    font-size: 1.2em;
-}
-table td{
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 1%;
-    border-bottom: groove;
-}
-table th{
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 1%;
-    border-bottom: groove;
-}
+
 .imagenAgregar{
     width: 10%;
     display: block;

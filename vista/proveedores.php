@@ -58,14 +58,14 @@
 	?>
 	<center>
 		<div class="imagenAgregar">
-			<a href="nuevoProveedor.php">
+			<a href="?vista=nuevoProveedor">
 				<img src="assets/agregar.png" >
 			</a>
 		</div>
 	 </center>
 
 	 <center><h1>Agregar nuevo proveedor</h1></center>
-	 <center>
+	 
 		<table id="proveedores">
 			<thead>
 				<tr>
@@ -98,16 +98,16 @@
                         <td><?php echo $row['id_colonia'];?></td>
                         <td><?php echo $row['id_cp'];?></td>
 						<td>
-								<a href="editarProveedor.php?id=<?php echo $row["id_proveedor"];?>"><i class="fa fa-pencil-square-o fa-lg"></i></a>
+								<a href="?vista=editarProveedor&id=<?php echo $row["id_proveedor"];?>"><i class="fa fa-pencil-square-o fa-lg"></i></a>
 						</td>
 						<td>
-								<a href="eliminarProveedor.php?id=<?php echo $row["id_proveedor"];?>"><i class="fa fa-trash fa-lg"></i></a>
+								<a href="?vista=eliminarProveedor&id=<?php echo $row["id_proveedor"];?>"><i class="fa fa-trash fa-lg"></i></a>
 						</td>
 					</tr>
 					<?php } ?>
 				</tbody>
 		</table>
-     </center>
+     
      <footer>
      	<?php require_once("vista/estaticas/footer.html");?>
      </footer>

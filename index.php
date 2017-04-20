@@ -7,7 +7,8 @@
         	#Si la vista es pública.
         	if($vista == "inicio" || $vista == "iniciarSesion" || $vista == "registro" || $vista == "producto"){
         		#incluye la vista
-        		include('vista/'.strtolower($vista).'.php');	
+        		include('vista/'.strtolower($vista).'.php');
+                /*|| $vista == "carritoCompra" || $vista == "mostrarCarrito" || $vista = "eliminaCarrito"	*/
         	
         	}else{#Si no es publica entonces es privada.
         		#Debe existir una sesion.

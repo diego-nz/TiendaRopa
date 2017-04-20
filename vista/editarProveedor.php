@@ -89,12 +89,13 @@ $query="UPDATE t_proveedores SET empresa='".$empresa."',contacto='".$contacto."'
                   <option id="idEstado" name="idEstado" value="<?php
                     echo $row['id_estado'];?>">
                       <?php echo $row['estado']; ?> </option>
+                      <?php
+                }
+            ?>
                     </select>
                  </td>
                 </tr>
-            <?php
-                }
-            ?>
+            
                 <tr>
                     <td width="20"><b>Municipio </b></td>
                <td>
@@ -109,12 +110,13 @@ $query="UPDATE t_proveedores SET empresa='".$empresa."',contacto='".$contacto."'
                   <option id="idMunicipio" name="idMunicipio" value="<?php
                     echo $row['id_municipio'];?>">
                       <?php echo $row['municipio']; ?> </option>
+                       <?php
+                   }
+                 ?>
                     </select>
                  </td>
                 </tr>
-            <?php
-           }
-         ?>
+           
                 <tr>
                     <td width="20"><b>Colonia </b></td>
                <td>
@@ -127,12 +129,13 @@ $query="UPDATE t_proveedores SET empresa='".$empresa."',contacto='".$contacto."'
                   <option id="idColonia" name="idColonia" value="<?php
                     echo $row['id_colonia'];?>">
                     <?php echo $row['colonia']; ?> </option>
+                    <?php
+            }
+          ?>
                     </select>
                  </td>
               </tr>
-            <?php
-            }
-          ?>
+            
                 <tr>
                     <td width="20"><b>Codigo Postal</b></td>
                <td>
@@ -145,12 +148,13 @@ $query="UPDATE t_proveedores SET empresa='".$empresa."',contacto='".$contacto."'
                   <option id="idCp" name="idCp" value="<?php
                     echo $row['id_cp'];?>">
                     <?php echo $row['cp']; ?> </option>
+                    <?php
+            }
+          ?>
                     </select>
                  </td>
               </tr>
-            <?php
-            }
-          ?>
+            
                 <tr>
                     <td colspan="2">
                      <center>

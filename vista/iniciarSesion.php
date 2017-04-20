@@ -12,7 +12,26 @@
 
 <body>
     <?php require_once( "vista/estaticas/header.php"); ?>
-
+    <?php if(isset($_GET["estado"])){ 
+        $accion=$_GET["estado"];
+        switch ($accion) {
+            case '6':
+                echo '<div id="estado" style="display: block; margin-left: auto;
+                            margin-right: auto; background-color: #00a577;
+                            width: 30%; padding: 5px; border-radius: 20px;
+                            font-size: 1.2em; color: #FAFAFA; text-align:center;
+                            margin-bottom: 2%;" >
+                        Se registró exitosamente, ahora puede iniciar sesión.
+                    </div>';
+                break;
+            
+            
+            default:
+                echo "";
+                break;
+        }
+    }
+    ?>
     <section>
         <div class="login">
             <span id="encabezado">Inicio de Sesión</span>
@@ -23,7 +42,7 @@
                 <label for="txtContrasena">Contraseña <i class="fa fa-lock fa-fw"></i></label>
                 <input type="password" name="txtContrasena" id="txtContrasena" class="form-control cajas" required/>
                 <input type="submit" name="btnLogin" id="btnLogin" class="boton" value="Iniciar Sesión">
-                <span id="registro"><a href="#">Registrarme</a></span>
+                <span id="registro"><a href="?vista=registro">Registrarme</a></span>
         </div>
     </section>
     <footer>

@@ -1,5 +1,5 @@
 <?php
- require("conexion.php");
+ require_once("modelo/conexion.php");
 
 	if(isset($_POST["txtEmpresa"])){
     $empresa=$_POST['txtEmpresa'];
@@ -79,12 +79,12 @@
                              
                           <option id="cmbIdEstado" name="cmbIdEstado" value="<?php echo $row['id_estado'];?>">
                               <?php echo $row['estado']; ?> </option>
+                               <?php
+                        }
+                    ?>
                             </select>
                          </td>
                     </tr>
-                    <?php
-                        }
-                    ?>
                     
                     <tr>
                         <td width="20"><b>Municipio</b></td>
@@ -99,12 +99,12 @@
                           <option id="cmbIdMuni" name="cmbIdMuni" value="<?php
                             echo $row['id_municipio'];?>">
                               <?php echo $row['municipio']; ?> </option>
+                              <?php
+                        }
+                    ?> 
                             </select>
                          </td>
-                    </tr>
-                    <?php
-                        }
-                    ?>  
+                    </tr> 
                     
                   <tr>
                         <td width="20"><b>Colonia</b></td>
@@ -118,12 +118,12 @@
                           <option id="cmbIdCol" name="cmbIdCol" value="<?php
                             echo $row['id_colonia'];?>">
                               <?php echo $row['colonia']; ?> </option>
+                              <?php
+                        }
+                    ?>
                             </select>
                          </td>
                     </tr>
-                    <?php
-                        }
-                    ?>
                     <tr>
                         <td width="20"><b>Codigo Postal</b></td>
                          <td>
@@ -133,15 +133,16 @@
                          $resultado=$mysqli ->query($query);
                          while($row=$resultado->fetch_assoc()){               
                          ?>
+
                           <option id="cmbIdCp" name="cmbIdCp" value="<?php
                             echo $row['id_cp'];?>">
                               <?php echo $row['cp']; ?> </option>
+                              <?php
+                        }
+                    ?> 
                             </select>
                          </td>
                     </tr>
-                    <?php
-                        }
-                    ?>                                                                  
                     <tr>
                         <td colspan="2"><center><input type="submit" name="Guardar" value="Guardar"/></center></td>
                     </tr>   

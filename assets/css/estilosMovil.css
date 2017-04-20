@@ -304,4 +304,14 @@
         margin-left: 0;
         margin-right: 0;
     }
+   .contendedorDetalleProducto{
+  margin-left: 10%;
+  padding: 5%;
+} 
+.md2, .md5, .md7, .md10{
+        display: inline-block;
+        margin:8px;
+        padding: 0px 0px;
 }
+}
+ 

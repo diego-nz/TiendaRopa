@@ -35,7 +35,7 @@
     <?php }  ?>
     </div>
     <div class="carrito">
-        <span><i class="fa fa-shopping-cart fa-2x" style="color:#00BED7;"></i>Mi carrito</span>
+         <span><i class="fa fa-shopping-cart fa-2x" style="color:#00BED7;"></i><a href="?vista=mostrarCarrito">Mi carrito</a></span>
         <span style="color:#00BED7;">(0)elementos | $0.00</span>
     </div>
 </div>

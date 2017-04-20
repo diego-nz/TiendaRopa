@@ -89,7 +89,7 @@
                          <td><?php echo '$'.$row['p_compra'];?></td>
                         <td>
                         	<img src="imagenesProductos/<?php echo $row['imagen'];?>" alt="">
-                        	<?php echo $row['imagen'];?>
+                        	
                         </td>
 						<td>
 							<a href="?vista=editarProducto&id=<?php echo $row["id_producto"];?>">

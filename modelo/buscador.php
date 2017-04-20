@@ -17,7 +17,7 @@ if($query){
     }else if($prod != "" and mysqli_num_rows($query)){
         while($row = $query -> fetch_assoc()){
                 echo '  <div id="filaBuscador">
-                        <a href="#">
+                        <a href="?vista=producto&pro=';echo $row["id_producto"]; echo '">
                         <span id="productoBuscador">'; echo $row["producto"]; echo '</span>
                         <span id="precioBuscador">'; echo $row["p_venta"]; echo '</span>
                         </a>
