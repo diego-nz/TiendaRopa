@@ -21,6 +21,7 @@
     
     <section>
 
+<form method="post" action="?vista=generador.php">
 
 <?php
 //session_start();
@@ -62,11 +63,11 @@ if(empty($_SESSION['carrito'])){
         ?>
         <tbody>
             <tr>
-            <td><?php echo $producto['id']?></td>
-            <td><?php echo $producto['nomPro']?></td>
-            <td><?php echo $producto['cantidad']?></td>
-            <td><?php echo $producto['pventa']?></td>
-            <td><?php echo $producto['subtotal']?></td>
+            <td><input name="idp" value="<?php echo $producto['id']?>"></td>
+            <td><input name="pro" value="<?php echo $producto['nomPro']?>"></td>
+            <td><input name="can" value="<?php echo $producto['cantidad']?>"></td>
+            <td><input name="ven" value="<?php echo $producto['pventa']?>"></td>
+            <td><input name="subt" value="<?php echo $producto['subtotal']?>"></td>
             <td><a href='?vista=eliminaCarrito&id=<?php echo $producto['id']?>'>Eliminar</a></td>
             
         </tr>
@@ -108,11 +109,11 @@ if(empty($_SESSION['carrito'])){
         ?>
         <tbody>
             <tr>
-            <td><?php echo $producto['id']?></td>
-            <td><?php echo $producto['nomPro']?></td>
-            <td><?php echo $producto['cantidad']?></td>
-            <td><?php echo $producto['pventa']?></td>
-            <td><?php echo $producto['subtotal']?></td>
+            <td><input name="idp" value="<?php echo $producto['id']?>"></td>
+            <td><input name="pro" value="<?php echo $producto['nomPro']?>"></td>
+            <td><input name="can" value="<?php echo $producto['cantidad']?>"></td>
+            <td><input name="ven" value="<?php echo $producto['pventa']?>"></td>
+            <td><input name="subt" value="<?php echo $producto['subtotal']?>"></td>
             <td><a href='?vista=eliminaCarrito&id=<?php echo $producto['id']?>'>Eliminar</a></td>
             
         </tr>
@@ -147,11 +148,11 @@ if(empty($_SESSION['carrito'])){
         ?>
         <tbody>
             <tr>
-            <td><?php echo $producto['id']?></td>
-            <td><?php echo $producto['nomPro']?></td>
-            <td><?php echo $producto['cantidad']?></td>
-            <td><?php echo $producto['pventa']?></td>
-            <td><?php echo $producto['subtotal']?></td>
+            <td><input name="idp" value="<?php echo $producto['id']?>"></td>
+            <td><input name="pro" value="<?php echo $producto['nomPro']?>"></td>
+            <td><input name="can" value="<?php echo $producto['cantidad']?>"></td>
+            <td><input name="ven" value="<?php echo $producto['pventa']?>"></td>
+            <td><input name="subt" value="<?php echo $producto['subtotal']?>"></td>
             <td><a href='?vista=eliminaCarrito&id=<?php echo $producto['id']?>'>Eliminar</a></td>
             
         </tr>
@@ -192,16 +193,16 @@ if(empty($_SESSION['carrito'])){
         ?>
         <tbody>
              <tr>
-            <td><?php echo $producto['id']?></td>
-            <td><?php echo $producto['nomPro']?></td>
-            <td><?php echo $producto['cantidad']?></td>
-            <td><?php echo $producto['pventa']?></td>
-            <td><?php echo $producto['subtotal']?></td>
+            <td><input name="idp" value="<?php echo $producto['id']?>"></td>
+            <td><input name="pro" value="<?php echo $producto['nomPro']?>"></td>
+            <td><input name="can" value="<?php echo $producto['cantidad']?>"></td>
+            <td><input name="ven" value="<?php echo $producto['pventa']?>"></td>
+            <td><input name="subt" value="<?php echo $producto['subtotal']?>"></td>
             <td><a href='?vista=eliminaCarrito&id=<?php echo $producto['id']?>'>Eliminar</a></td>
             
         </tr>
         </tbody>
-       
+       <input type='submit' value='Generar PDF' />
         
         <?php } ?>
         
@@ -213,7 +214,7 @@ if(empty($_SESSION['carrito'])){
     ?> 
 
     <hr color="blue"/>
-       
+      </form>
     </section>
 
 </body>
