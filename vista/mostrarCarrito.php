@@ -214,6 +214,7 @@ if(empty($_SESSION['carrito'])){
     ?> 
 
     <hr color="blue"/>
+     <input type='submit' value='Generar PDF' />
       </form>
     </section>
 
